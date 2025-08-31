@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VendasFluxo - Visualização Interativa</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-tab {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.2);
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-tab:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        .nav-tab.active {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .diagram-container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .diagram-container.active { display: block; }
+        
+        .diagram-title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        .diagram-description {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .mermaid {
+            text-align: center;
+            background: #fafafa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 VendasFluxo Visionário</h1>
+            <p>Sistema de Vendas Inteligente com Google AI Studio</p>
+        </div>
+        
+        <div class="nav-tabs">
+            <div class="nav-tab active" onclick="showDiagram('fluxo-principal')">🔄 Fluxo Principal</div>
+            <div class="nav-tab" onclick="showDiagram('arquitetura')">🏗️ Arquitetura</div>
+            <div class="nav-tab" onclick="showDiagram('dados')">📊 Fluxo de Dados</div>
+            <div class="nav-tab" onclick="showDiagram('estados')">🔄 Estados</div>
+            <div class="nav-tab" onclick="showDiagram('jornada')">🤝 Jornada Cliente</div>
+        </div>
+        
+        <!-- Fluxo Principal -->
+        <div id="fluxo-principal" class="diagram-container active">
+            <h2 class="diagram-title">🔄 Fluxo Principal do Processo de Vendas</h2>
+            <div class="diagram-description">
+                <strong>Visão Geral:</strong> Fluxo completo do processo de vendas, desde a prospecção até a implementação, destacando o papel central do Google AI Studio.
+            </div>
+            <div class="mermaid">
+graph TD
+    A[🎯 Prospecção<br/>Preditiva] --> B[🤖 Qualificação IA]
+    B --> C{Score ≥ 7?}
+    C -->|❌ Não| D[📧 Nurturing]
+    C -->|✅ Sim| E[🤝 Reunião<br/>Descoberta]
+    
+    E --> F[📝 Captura<br/>de Dados]
+    F --> G[🧠 Google AI Studio<br/>Processamento]
+    G --> H[📋 Geração PRD]
+    
+    H --> I[🏗️ Criação<br/>Ecossistema]
+    I --> J[📊 Monday.com]
+    I --> K[📚 Notion]
+    I --> L[🎨 Slides]
+    I --> M[🔍 Notebook LM]
+    
+    J --> N[🤝 Sessão<br/>Colaborativa]
+    K --> N
+    L --> N
+    M --> N
+    
+    N --> O[✨ Co-criação<br/>Cliente]
+    O --> P[🔄 Refinamento]
+    P --> Q[✅ Fechamento]
+    Q --> R[🚀 Implementação]
+    
+    D --> B
+    P --> N
+    
+    classDef startNode fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef aiNode fill:#f3e5f5,stroke:#4a148c,stroke-width:3px
+    classDef collabNode fill:#e8f5e8,stroke:#1b5e20,stroke-width:3px
+    classDef successNode fill:#fff3e0,stroke:#e65100,stroke-width:3px
+    
+    class A startNode
+    class G,H aiNode
+    class N,O collabNode
+    class Q,R successNode
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">40%</div>
+                    <div class="metric-label">Redução no Ciclo</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">60%</div>
+                    <div class="metric-label">Aumento no Ticket</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">35%</div>
+                    <div class="metric-label">Melhoria Conversão</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">9.0+</div>
+                    <div class="metric-label">NPS Processo</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Arquitetura -->
+        <div id="arquitetura" class="diagram-container">
+            <h2 class="diagram-title">🏗️ Arquitetura Técnica</h2>
+            <div class="diagram-description">
+                <strong>Sistema Distribuído:</strong> Google AI Studio como núcleo, integrando múltiplas plataformas.
+            </div>
+            <div class="mermaid">
+graph TB
+    subgraph "📥 ENTRADA"
+        A1[📊 CRM Data]
+        A2[📞 Transcrições]
+        A3[📄 Documentos]
+        A4[✍️ Anotações]
+    end
+    
+    subgraph "🔄 PROCESSAMENTO"
+        B1[🔗 Consolidator]
+        B2[🧠 AI Studio]
+        B3[⚙️ Prompt Engine]
+        B4[🎯 Parser]
+    end
+    
+    subgraph "🏭 GERAÇÃO"
+        C1[📋 PRD]
+        C2[📊 Tasks]
+        C3[📚 Docs]
+        C4[🎨 Slides]
+    end
+    
+    subgraph "🌐 SAÍDA"
+        D1[📊 Monday]
+        D2[📚 Notion]
+        D3[🎨 Gamma]
+        D4[🔍 Notebook]
+    end
+    
+    A1 --> B1
+    A2 --> B1
+    A3 --> B1
+    A4 --> B1
+    
+    B1 --> B2
+    B2 --> B3
+    B3 --> B4
+    
+    B4 --> C1
+    B4 --> C2
+    B4 --> C3
+    B4 --> C4
+    
+    C1 --> D2
+    C2 --> D1
+    C3 --> D2
+    C4 --> D3
+    
+    classDef processLayer fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
+    class B1,B2,B3,B4 processLayer
+            </div>
+        </div>
+        
+        <!-- Outros diagramas seguem o mesmo padrão... -->
+        
+    </div>
+    
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+        
+        function showDiagram(diagramId) {
+            // Esconder todos os diagramas
+            document.querySelectorAll('.diagram-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            
+            // Remover classe active de todas as tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Mostrar diagrama selecionado
+            document.getElementById(diagramId).classList.add('active');
+            
+            // Adicionar classe active na tab clicada
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
