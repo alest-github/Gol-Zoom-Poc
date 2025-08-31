@@ -1,0 +1,55 @@
+# Sistema VendasFluxo - GitIgnore
+
+## Arquivos temporários
+*.tmp
+*.log
+*.cache
+
+## Configurações locais
+.env
+.env.local
+config/local.json
+
+## Dependências
+node_modules/
+vendor/
+.pnp/
+
+## Builds e distribuição
+dist/
+build/
+*.min.js
+*.min.css
+
+## IDEs e editores
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+## Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+## Arquivos de backup
+*.bak
+*.orig
+*.rej
+
+## Dados sensíveis
+credentials/
+secrets/
+*.key
+*.pem
+
+## Arquivos específicos do projeto
+tmp/
+temp/
+scratch/
+playground/
+
+# Permitir arquivos importantes mesmo em pastas ignoradas
+!.gitkeep
+!README.md
