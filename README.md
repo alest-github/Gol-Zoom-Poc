@@ -5,6 +5,14 @@
 
 Este projeto revoluciona o processo de vendas da Alest, transformando o time de "fornecedores tradicionais" em "arquitetos de soluções" através do uso estratégico do Google AI Studio como centro de inteligência.
 
+### 🚀 POC GOL + Zoom Contact Center
+
+**Status Atual**: Documentação completa da **POC GOL + Zoom Contact Center** (03/09 a 23/09/2025)
+- **Objetivo**: Validar Centro de Excelência do Cliente para GOL Linhas Aéreas
+- **Escopo**: 50 usuários (40 agentes + 10 supervisores) 
+- **Meta de ROI**: 261% baseado em estudo Forrester TEI
+- **Tecnologias**: Zoom Contact Center + Expert Assist IA + Zendesk Integration
+
 ## 📁 Estrutura do Projeto
 
 ```
