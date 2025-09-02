@@ -181,26 +181,32 @@ Executar transição controlada e capturar evidências de sucesso
 - ✅ Comunicação de regras e processos
 - 📅 Reuniões semanais (10/09, 17/09)
 
-### **Grupo 01: Semana 1 - Configuração** (03/09-09/09)
-- **03/09**: Kickoff técnico de implementação
-- **04/09**: Criação instância ZCC + 50 usuários + perfis
-- **05/09-08/09**: Construção fluxos Flow Builder
-- **08/09**: Conexão ZCC-Zendesk (integração nativa)
-- **09/09**: Mapeamento campos + teste interno completo
+### **Grupo 01: Semana 1 - Configuração e Construção** (03/09-09/09)
+- **03/09**: Conduzir Kickoff Técnico de Implementação
+- **04/09**: Criar instância ZCC e 50 usuários (Agentes/Supervisores)
+- **04/09**: Definir perfis de permissão e filas de atendimento
+- **05/09-08/09**: Construir fluxo de voz e chat no Flow Builder
+- **08/09**: Conectar ZCC ao Zendesk (Integração Nativa)
+- **09/09**: Mapear campos e validar criação de tickets via ZCC
+- **09/09**: Realizar Teste Interno de Configuração Básica
 
-### **Grupo 02: Semana 2 - Integração Avançada** (10/09-16/09)
-- **10/09**: Expert Assist + Base Conhecimento
-- **11/09**: Validação sugestões Expert Assist
-- **12/09-15/09**: Teste funcional integração completa
-- **15/09**: Validação performance VDI GOL
-- **16/09**: Configuração dashboards + material treinamento
+### **Grupo 02: Semana 2 - Integração Avançada e Testes** (10/09-16/09)
+- **10/09**: Conectar Expert Assist à Base de Conhecimento (Zendesk)
+- **11/09**: Validar sugestão de artigos do Expert Assist em chamadas
+- **12/09-15/09**: Executar Teste Funcional de Integração Completa
+- **15/09**: Validar performance do ZCC no ambiente VDI da GOL
+- **16/09**: Configurar Dashboards (Quality e Workforce Management)
+- **12/09-16/09**: Preparar e validar material de treinamento
 
 ### **Grupo 03: Semana 3 - Treinamento e Go-Live** (17/09-23/09)
-- **17/09**: Treinamento Turma 1 (25 agentes)
-- **18/09**: Treinamento Turma 2 (25 agentes)
-- **19/09**: UAT (Teste Aceitação Usuário)
-- **22/09**: Feedback UAT + ajustes finais + plano Go-Live
-- **23/09**: **POC GO-LIVE** + início Hypercare
+- **17/09**: Conduzir Treinamento - Turma 1 (aprox. 25 agentes)
+- **18/09**: Conduzir Treinamento - Turma 2 (aprox. 25 agentes)
+- **19/09**: Executar UAT (Teste de Aceitação do Usuário)
+- **22/09**: Compilar e reportar feedback do UAT
+- **22/09**: Aplicar ajustes finais com base no feedback do UAT
+- **22/09**: Alinhar plano de "virada" e comunicação do Go-Live
+- **23/09**: **POC GO-LIVE!**
+- **23/09**: Iniciar monitoramento Hypercare (pós Go-Live)
 
 ## 🚨 Riscos e Mitigações
 
