@@ -77,23 +77,45 @@ graph LR
 ### 💎 Fluxo de Valor da POC
 
 ```mermaid
-sankey-beta
-    %% Fluxo de Valor POC GOL
-    Investimento POC,Zoom Platform,40
-    Investimento POC,Expert Assist,30
-    Investimento POC,Implementation,30
+flowchart LR
+    subgraph "💸 Investimento POC"
+        I1[Zoom Platform: 40%]
+        I2[Expert Assist: 30%]
+        I3[Implementation: 30%]
+    end
     
-    Zoom Platform,Screen Pop Auto,40
-    Expert Assist,IA Suggestions,30
-    Implementation,VDI Performance,30
+    subgraph "⚙️ Capacidades Técnicas"
+        C1[Screen Pop Auto]
+        C2[IA Suggestions]
+        C3[VDI Performance]
+    end
     
-    Screen Pop Auto,Agent Efficiency,50
-    IA Suggestions,Resolution Quality,40
-    VDI Performance,System Stability,35
+    subgraph "📈 Resultados Operacionais"
+        R1[Agent Efficiency: +50%]
+        R2[Resolution Quality: +40%]
+        R3[System Stability: +35%]
+    end
     
-    Agent Efficiency,Business Case,75
-    Resolution Quality,Business Case,65
-    System Stability,Business Case,60
+    subgraph "💰 Business Case Final"
+        BC[ROI 261%: Validado]
+    end
+    
+    I1 --> C1
+    I2 --> C2
+    I3 --> C3
+    
+    C1 --> R1
+    C2 --> R2
+    C3 --> R3
+    
+    R1 --> BC
+    R2 --> BC
+    R3 --> BC
+    
+    style I1 fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style I2 fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style I3 fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style BC fill:#c8e6c9,stroke:#2e7d32,stroke-width:3px
 ```
 
 ### 🎯 Radar de Validação POC
@@ -289,38 +311,36 @@ gantt
 ### 🌱 Evolução da POC em Fases
 
 ```mermaid
-gitgraph
-    commit id: "03/09: Kickoff"
+flowchart LR
+    subgraph "📅 Fase 1: Semana 1 (03/09-09/09)"
+        F1A[03/09: Kickoff]
+        F1B[04/09: ZCC Setup]
+        F1C[08/09: Zendesk Integration]
+        F1D[09/09: Teste Básico OK]
+    end
     
-    branch configuracao
-    checkout configuracao
-    commit id: "04/09: ZCC Setup"
-    commit id: "08/09: Zendesk Integration"
-    commit id: "09/09: Teste Básico OK"
+    subgraph "🔧 Fase 2: Semana 2 (10/09-16/09)"
+        F2A[10/09: Expert Assist]
+        F2B[15/09: VDI Performance]
+        F2C[16/09: Dashboards]
+        F2D[Semana 2: Validada]
+    end
     
-    checkout main
-    merge configuracao
-    commit id: "Semana 1: Completa"
+    subgraph "🚀 Fase 3: Semana 3 (17/09-23/09)"
+        F3A[17/09: Treinamento]
+        F3B[19/09: UAT Sucesso]
+        F3C[23/09: GO-LIVE!]
+        F3D[POC: SUCESSO ✅]
+    end
     
-    branch integracao
-    checkout integracao
-    commit id: "10/09: Expert Assist"
-    commit id: "15/09: VDI Performance"
-    commit id: "16/09: Dashboards"
+    F1A --> F1B --> F1C --> F1D
+    F1D --> F2A --> F2B --> F2C --> F2D
+    F2D --> F3A --> F3B --> F3C --> F3D
     
-    checkout main
-    merge integracao
-    commit id: "Semana 2: Validada"
-    
-    branch golive
-    checkout golive
-    commit id: "17/09: Treinamento"
-    commit id: "19/09: UAT Sucesso"
-    commit id: "23/09: GO-LIVE!"
-    
-    checkout main
-    merge golive
-    commit id: "POC: SUCESSO ✅"
+    style F1A fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    style F1D fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    style F2D fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    style F3D fill:#ffd700,stroke:#f57c00,stroke-width:3px
 ```
 
 ---
@@ -346,20 +366,37 @@ graph LR
 ### 🏆 Scorecard de Validação POC
 
 ```mermaid
-quadrantChart
-    title Matriz de Sucesso POC GOL
-    x-axis Baixa Adoção --> Alta Adoção
-    y-axis Baixa Performance --> Alta Performance
+graph TD
+    subgraph "📊 Matriz de Sucesso POC GOL"
+        subgraph "🎆 Quadrante 1: Sucesso Total"
+            Q1[Alta Performance + Alta Adoção]
+            META_IDEAL["🎯 Meta Ideal POC<br/>Performance: 85%<br/>Adoção: 90%"]
+        end
+        
+        subgraph "🔧 Quadrante 2: Otimizar UX"
+            Q2[Alta Performance + Baixa Adoção]
+        end
+        
+        subgraph "🚀 Quadrante 3: Melhorar Performance"
+            Q3[Baixa Performance + Alta Adoção]
+        end
+        
+        subgraph "⚠️ Quadrante 4: Repensar Estratégia"
+            Q4[Baixa Performance + Baixa Adoção]
+            ATUAL["📍 Sistema Atual<br/>Performance: 40%<br/>Adoção: 30%"]
+        end
+    end
     
-    quadrant-1 🎆 Sucesso Total
-    quadrant-2 🔧 Otimizar UX
-    quadrant-3 ⚠️ Repensar Estratégia
-    quadrant-4 🚀 Melhorar Performance
+    META_MIN["🎯 Meta Mínima POC<br/>Performance: 70%<br/>Adoção: 70%"]
+    BENCHMARK["📈 Benchmark Mercado<br/>Performance: 60%<br/>Adoção: 60%"]
     
-    Sistema Atual: [0.3, 0.4]
-    Meta Mínima POC: [0.7, 0.7]
-    Meta Ideal POC: [0.9, 0.85]
-    Benchmark Mercado: [0.6, 0.6]
+    ATUAL --> META_MIN
+    META_MIN --> META_IDEAL
+    
+    style META_IDEAL fill:#c8e6c9,stroke:#2e7d32,stroke-width:3px
+    style META_MIN fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style ATUAL fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style BENCHMARK fill:#e8eaf6,stroke:#3f51b5,stroke-width:1px
 ```
 
 ### 🕰️ Timeline de Validação
